@@ -56,5 +56,6 @@ MonoBehaviour:
   GameUI: {fileID: 0}
   MainMenu: {fileID: 0}
   RestartMenu: {fileID: 0}
+  WinScreen: {fileID: 0}
   Character: {fileID: 0}
-  RespawnEnemy: {fileID: 0}
+  EnemySpawn: {fileID: 0}

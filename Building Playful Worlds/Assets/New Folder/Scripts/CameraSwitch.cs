@@ -8,6 +8,8 @@ using UnityEngine;
 	 public GameObject GameUI;
 	 public GameObject MainMenu;
 	 public GameObject RestartMenu;
+
+	 public GameObject WinScreen;
 	 
 	 //public GameObject MainMenu_Restart;
 
@@ -28,6 +30,7 @@ using UnityEngine;
          camera1.SetActive(true);
          camera2.SetActive(false); 
 
+		 WinScreen.SetActive(false);
 		 GameUI.SetActive(false);
 		 RestartMenu.SetActive(false);
 		 MainMenu.SetActive(true);
@@ -37,6 +40,28 @@ using UnityEngine;
 		 
 
      }
+
+	void OnCollisionEnter(Collision col) {
+
+		if (col.gameObject.name == "EndPoint")
+        {
+            Debug.Log("YOU WON");
+
+			camera1.SetActive(true);
+        	camera2.SetActive(false);
+
+
+			WinScreen.SetActive(true);
+			GameUI.SetActive(false);
+			RestartMenu.SetActive(false);
+			MainMenu.SetActive(false);
+
+            
+ 
+            
+        }
+		
+	}
 
 	public void OnStartGame()
 	 {
@@ -48,6 +73,7 @@ using UnityEngine;
 		GameUI.SetActive(true);
 		RestartMenu.SetActive(false);
 		MainMenu.SetActive(false);
+		WinScreen.SetActive(false);
 		Debug.Log("STARTED!");
 
 
